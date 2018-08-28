@@ -15,7 +15,7 @@ def add_message():
 
 
 
-    return flask.request.args.get("val1")
+    return flask.request.args.get("var1")
     # return json.loads(flask.request.data)
 
 @app.route('/')
