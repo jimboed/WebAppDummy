@@ -2,7 +2,7 @@
 
 import base64
 import flask
-
+import json
 
 
 
@@ -14,8 +14,9 @@ def add_message():
 
 
 
-    return request.args
 
+    return flask.request.args.get("val1")
+    # return json.loads(flask.request.data)
 
 @app.route('/')
 def home():
