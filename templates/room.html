@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Chat - {{ room.topic }}
+{% endblock %}
+
+{% block content %}
+
+    <main class="chatwindow unjoined" room-key="{{ room.id }}" viewer-id="5" viewer-name>
+    <div class="chat">
+     <p class="chat-header"><strong>Topic:</strong> {{ room.topic }}</p>
+
+    <div class="join">
+    <form class="pure-form pure-u-1 pure-u-md-1-2" id="join-form">
+        <label for="join-nick"></label>
+        <input type="text" name="nick" id="join-nick" placeholder="Enter nickname">
+        <button type="submit" class="pure-button">Submit</button>
+    </form>
+    </div>
+    <div class="entered">
+    <ul class="chat-messages">
+
+    </ul>
+    <form class="pure-form pure-u-1" id="chat-input" >
+        <label for="in-msg"></label>
+        <input type="text" name="message" id="in-msg" placeholder="Enter reply">
+        <button type="submit" class="pure-button">Send</button>
+    </form>
+
+    </div>
+    <div class="roster">
+    <ul class="roster-list">
+
+    </ul>
+    </div>
+    </div>
+    </main>
+<!--<script src="https://cdn.jsdelivr.net/socket.io-client/1.3.2/socket.io.min.js"></script>-->
+<<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src="{{ url_for('static', filename='chatroom.js') }}"></script>
+{% endblock %}
