@@ -9,13 +9,13 @@ from sqlalchemy import desc
 from math import ceil
 
 
-@app.route('/integrationTest', methods=['GET', 'POST'])
-def add_message(uuid):
+@app.route('/integrationTest', methods=['GET'])
+def add_message():
     content = request.get_json(silent=True)
 
-    return uuid
+    return content
 
 
-@app.route('/logout')
-def logout():
-    return flask.redirect('/')
+@app.route('/')
+def home():
+    return "hello jim"
