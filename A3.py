@@ -9,7 +9,7 @@ import json
 app = flask.Flask(__name__)
 
 
-@app.route('/integrationTest', methods=['GET'])
+@app.route('/integrationTest/test', methods=['GET'])
 def add_message():
 
 
