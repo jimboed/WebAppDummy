@@ -1,4 +1,4 @@
- 
+
 
 import base64
 import flask
@@ -11,9 +11,10 @@ app = flask.Flask(__name__)
 
 @app.route('/integrationTest', methods=['GET'])
 def add_message():
-    content = request.get_json(silent=True)
 
-    return content
+     
+
+    return request.args
 
 
 @app.route('/')
